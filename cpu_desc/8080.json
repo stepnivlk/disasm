@@ -1,0 +1,217 @@
+{
+	"name": "8080",
+	"op_map": {
+		"0": {
+			"name": "NOP",
+			"args": "",
+			"flags": "",
+			"function": "",
+			"size": 1
+		},
+		"1": {
+			"name": "LXI",
+			"args": "B, D16",
+			"flags": "",
+			"function": "B <- byte 3, C <- byte 2",
+			"size": 3 
+		},
+		"2": {
+			"name": "STAX",
+			"args": "B",
+			"flags": "",
+			"function": "(BC) <- A",
+			"size": 1
+		},
+		"3": {
+			"name": "INX",
+			"args": "B",
+			"flags": "",
+			"function": "BC <- BC+1",
+			"size": 1
+		},
+		"4": {
+			"name": "INR",
+			"args": "B",
+			"flags": "Z, S, P, AC",
+			"function": "B <- B+1",
+			"size": 1
+		},
+		"5": {
+			"name": "DCR",
+			"args": "B",
+			"flags": "Z, S, P, AC",
+			"function": "",
+			"size": 1
+		},
+		"6": {
+			"name": "MVI",
+			"args": "B, D8",
+			"flags": "",
+			"function": "B <- byte 2",
+			"size": 2
+		},
+		"7": {
+			"name": "RLC",
+			"args": "",
+			"flags": "CY",
+			"function": "A = A << 1; bit 0 = prev bit 7; CY = prev bit 7",
+			"size": 1
+		},
+		"8": {
+			"name": "-",
+			"args": "",
+			"flags": "",
+			"function": "",
+			"size": 1
+		},
+		"9": {
+			"name": "DAD",
+			"args": "B",
+			"flags": "CY",
+			"function": "HL = HL + BC",
+			"size": 1
+		},
+		"a": {
+			"name": "LDAX",
+			"args": "B",
+			"flags": "",
+			"function": "A <- (BC)",
+			"size": 1
+		},
+		"b": {
+			"name": "DCX",
+			"args": "B",
+			"flags": "",
+			"function": "BC = BC-1",
+			"size": 1
+		},
+		"c": {
+			"name": "INR",
+			"args": "C",
+			"flags": "Z, S, P, AC",
+			"function": "C <- C+1",
+			"size": 1
+		},
+		"d": {
+			"name": "DCR",
+			"args": "C",
+			"flags": "Z, S, P, AC",
+			"function": "C <-C-1",
+			"size": 1
+		},
+		"e": {
+			"name": "MVI",
+			"args": "C, D8",
+			"flags": "",
+			"function": "C <- byte 2",
+			"size": 2
+		},
+		"f": {
+			"name": "RRC",
+			"args": "",
+			"flags": "CY",
+			"function": "A = A >> 1; bit 7 = prev bit 0; CY = prev bit 0",
+			"size": 2
+		},
+		"10": {
+			"name": "-",
+			"args": "",
+			"flags": "",
+			"function": "",
+			"size": 1
+		},
+		"11": {
+			"name": "LXI",
+			"args": "D, D16",
+			"flags": "",
+			"function": "D <- byte 3, E <- byte 2",
+			"size": 3
+		},
+		"12": {
+			"name": "STAX",
+			"args": "D",
+			"flags": "",
+			"function": "(DE) <- A",
+			"size": 1
+		},
+		"13": {
+			"name": "INX",
+			"args": "D",
+			"flags": "",
+			"function": "DE <- DE + 1",
+			"size": 1
+		},
+		"14": {
+			"name": "INR",
+			"args": "D",
+			"flags": "Z, S, P, AC",
+			"function": "D <- D+1",
+			"size": 1
+		},
+		"15": {
+			"name": "DCR",
+			"args": "D",
+			"flags": "Z, S, P, AC",
+			"function": "D <- D-1",
+			"size": 1
+		},
+		"16": {
+			"name": "MVI",
+			"args": "D, D8",
+			"flags": "",
+			"function": "D <- byte 2",
+			"size": 2 
+		},
+		"17": {
+			"name": "RAL",
+			"args": "",
+			"flags": "CY",
+			"function": "A = A << 1; bit 0 = prev CY; CY = prev bit 7",
+			"size": 1
+		},
+		"18": {
+			"name": "-",
+			"args": "",
+			"flags": "",
+			"function": "",
+			"size": 1
+		},
+		"19": {
+			"name": "DAD",
+			"args": "D",
+			"flags": "CY",
+			"function": "HL = HL + DE",
+			"size": 1
+		},
+		"1a": {
+			"name": "LDAX",
+			"args": "D",
+			"flags": "",
+			"function": "A <- (DE)",
+			"size": 1
+		},
+		"c3": {
+			"name": "JMP",
+			"args": "adr",
+			"flags": "",
+			"function": "PC <= adr",
+			"size": 3
+		},
+
+		"cd": {
+			"name": "CALL",
+			"args": "adr",
+			"flags": "",
+			"function": "(SP-1)<-PC.hi;(SP-2)<-PC.lo;SP<-SP-2;PC=adr",
+			"size": 3
+		},
+		"d4": {
+			"name": "CNC",
+			"args": "adr",
+			"flags": "",
+			"function": "if NCY, CALL adr",
+			"size": 3
+		}
+
+	}
+}
