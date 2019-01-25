@@ -11,7 +11,7 @@ impl Buffer {
         let mut file = File::open("data/invaders.h").unwrap();
         let mut data = Vec::new();
 
-        // TODO: error handling
+        // TODO: error handling + better buffer
         file.read_to_end(&mut data).unwrap();
 
         Self {
