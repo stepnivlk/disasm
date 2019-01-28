@@ -8,10 +8,10 @@ pub struct InstrSet {
 }
 
 impl InstrSet {
-    pub fn new() -> Self {
+    pub fn new(cpu_desc: CpuDesc, buffer: Buffer) -> Self {
         Self {
-            cpu_desc: CpuDesc::new(),
-            buffer: Buffer::new(),
+            cpu_desc,
+            buffer,
             null_desc: InstrDesc::unkwnown(),
         }
     }

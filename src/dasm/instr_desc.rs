@@ -7,6 +7,7 @@ pub struct InstrDesc {
     pub size: usize,
 }
 
+// TODO: String::from
 impl InstrDesc {
     pub fn unkwnown() -> Self {
         Self {

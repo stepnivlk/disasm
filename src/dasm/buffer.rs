@@ -6,9 +6,8 @@ pub struct Buffer {
 }
 
 impl Buffer {
-    pub fn new() -> Self {
-        // TODO: proper file handling
-        let mut file = File::open("data/invaders.h").unwrap();
+    pub fn new(bin_path: &str) -> Self {
+        let mut file = File::open(bin_path).unwrap();
         let mut data = Vec::new();
 
         // TODO: error handling

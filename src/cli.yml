@@ -1,0 +1,23 @@
+name: asmtools
+version: 0.1.0
+about: disasemble stuff
+args:
+    - bin:
+        short: b
+        long: bin
+        value_name: file
+        help: Binary file to disasembly
+        takes_value: true
+        required: true
+        required_unless: list-cpus
+    - cpu:
+        short: c
+        long: cpu
+        value_name: cpu
+        help: Cpu family
+        takes_value: true
+        required_unless: list-cpus
+    - list-cpus:
+        short: l
+        long: list-cpus
+        help: List of available CPUs
